@@ -19,12 +19,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@PropertySource({"classpath:application-module1.properties"})
+@PropertySource({"classpath:application.properties"})
 @EnableJpaRepositories(
         basePackages = "com.module1.api",
         entityManagerFactoryRef = "module1EntityManager",
         transactionManagerRef = "module1TransactionManager")
-@EntityScan("com.module1")
 public class PersistenceModule1AutoConfiguration {
 
     @Autowired

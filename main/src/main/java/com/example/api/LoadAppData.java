@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LoadAppData implements CommandLineRunner {
 
-    private UserRepository repository;
+    private CustomerRepository repository;
 
-    public LoadAppData(UserRepository repository) {
+    public LoadAppData(CustomerRepository repository) {
         this.repository = repository;
     }
 
