@@ -1,0 +1,5 @@
+com\module1\api\LoadModule1Data.class
+com\module1\api\PersistenceModule1AutoConfiguration.class
+com\module1\api\Weather.class
+com\module1\api\WeatherRepository.class
+com\module1\api\WeatherController.class
