@@ -1,5 +1,6 @@
 package com.example.api;
 
+import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -67,5 +68,13 @@ public class PersistenceAppAutoConfiguration {
         transactionManager.setEntityManagerFactory(
                 appEntityManager().getObject());
         return transactionManager;
+    }
+
+    @Bean
+    public SpringLiquibase mainLiquibase() {
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setDataSource(appDatasource());
+        liquibase.setChangeLog("classpath:liquibase/main.changelog-master.xml");
+        return liquibase;
     }
 }

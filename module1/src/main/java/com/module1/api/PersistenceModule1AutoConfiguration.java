@@ -1,5 +1,6 @@
 package com.module1.api;
 
+import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -65,5 +66,14 @@ public class PersistenceModule1AutoConfiguration {
         transactionManager.setEntityManagerFactory(
                 module1EntityManager().getObject());
         return transactionManager;
+    }
+
+
+    @Bean
+    public SpringLiquibase module1Liquibase() {
+        SpringLiquibase liquibase = new SpringLiquibase();
+        liquibase.setDataSource(module1Datasource());
+        liquibase.setChangeLog("classpath:liquibase/module1.changelog-master.xml");
+        return liquibase;
     }
 }

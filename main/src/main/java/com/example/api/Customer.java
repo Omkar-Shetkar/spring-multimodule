@@ -12,12 +12,16 @@ public class Customer {
     @Column
     private String name;
 
+    @Column
+    private String city;
+
     public Customer() {
     }
 
-    public Customer(int id, String name) {
+    public Customer(int id, String name, String city) {
         this.id = id;
         this.name = name;
+        this.city = city;
     }
 
     public int getId() {
@@ -36,11 +40,20 @@ public class Customer {
         this.name = name;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
+        return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
 }

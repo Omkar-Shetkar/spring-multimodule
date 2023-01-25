@@ -15,8 +15,8 @@ public class LoadAppData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        repository.save(new Customer(1, "Bheem"));
-        repository.save(new Customer(2, "Humpty Dumpty"));
-        repository.save(new Customer(3, "Alice"));
+        repository.save(new Customer(1, "Bheem", "India"));
+        repository.save(new Customer(2, "Humpty Dumpty", "USA"));
+        repository.save(new Customer(3, "Alice", "UK"));
     }
 }
