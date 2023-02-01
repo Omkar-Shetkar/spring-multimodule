@@ -17,4 +17,5 @@
     </changeSet>
 
     <include file="liquibase/main.changelog-1.xml"/>
+    <include file="liquibase/module1.changelog-master.xml"/>
 </databaseChangeLog>
